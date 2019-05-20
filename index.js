@@ -7,6 +7,11 @@ const config=require('config');
 const productrouter=require('./routes/product');
 const userrouter= require('./routes/user');
 const auth=require('./routes/auth');
+const employeRouter=require('./routes/employer');
+const orderRouter=require('./routes/orders');
+
+ const error=require('./middlewares/error');
+
 // if(!config.get('jwtPrivatekey')){
 //     console.error('fatal error')
 //     process.exit(1);
@@ -25,6 +30,10 @@ mongoose.connect('mongodb://localhost/e-commerce')
          app.use('/api',productrouter);
          app.use('/api',userrouter);
          app.use('/api/auth',auth);
+         app.use('/api/employer',employeRouter);
+         app.use('/api/orders',orderRouter);
+         app.use(error);
+
          
 
          const port = process.env.ECBPORT || 3000;
