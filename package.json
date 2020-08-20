@@ -5,7 +5,7 @@
   "start": "index.js",
   "main": "index.js",
   "dependencies": {
-    "bcrypt": "^3.0.4",
+    "bcrypt": "^5.0.0",
     "config": "^3.0.1",
     "express": "^4.16.4",
     "express-async-errors": "^3.1.1",
